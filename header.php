@@ -1,0 +1,47 @@
+<?php session_start(); ?>
+<?php include 'includes/conexion.php'; ?>
+<?php include 'includes/consultas.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="contenedor-principal">
+        <header class="header">
+            <div class="logo">
+                <a href="index.php">
+                    Blog
+                </a>
+            </div>
+            <?php  $categorias=getCategorias($conexion); 
+                //var_dump($categorias);
+            ?>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="index">Inicio</a>
+                    </li>
+                    <?php
+                        foreach ($categorias as $categoria) {
+                            ?>
+                            <li>
+                                <a href="categorias/<?php echo str_replace(' ','_',strtolower($categoria['nombre'])); ?>"><?php echo $categoria['nombre']; ?></a>
+                            </li>
+                            <?php
+                        }
+                    ?>
+                    <li>
+                        <a href="">Sobre mí</a>
+                    </li>
+                    <li>
+                        <a href="">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>

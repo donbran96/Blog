@@ -1,0 +1,229 @@
+:root {
+    --color-primario: #630202;
+    --color-secundario: #df9800;
+    --color-negro: #131212;
+    --color-blanco: #ffffff;
+    --color-fondo: #a7a7a7;
+  }
+  @font-face {
+    font-family: 'MontserratBold';
+    src: url('../assets/fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'MontserratRegular';
+    src: url('../assets/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+body{
+    background: var(--color-fondo); 
+    font-family: 'MontserratRegular';
+    font-size: 16px;
+    color: var(--color-negro);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.contenedor-principal{
+    max-width: 1440px;
+    margin: 20px auto;
+    width: 90%;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    background: var(--color-secundario);
+}
+a{
+    text-decoration: none;
+    color: var(--color-negro);
+}
+a:hover{
+    text-decoration: underline;
+}
+ul{
+    list-style: none;
+}
+
+/*Estilos del Header*/
+
+/*logotipo*/
+.header{
+    display: flex;
+    flex-direction: column;
+}
+.header div.logo{
+    margin: 0 auto;
+    font-size: 36px;
+    font-family: 'MontserratBold';
+}
+.header div.logo a{
+    text-shadow: 0px 0px 0px var(--color-blanco), 1px 1px 0px var(--color-blanco), 2px 2px 0px var(--color-blanco);
+    transition: all 0.5s;
+}
+.header div.logo a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0px 0px 0px var(--color-blanco), -1px -1px 0px var(--color-blanco), -2px -2px 0px var(--color-blanco);
+}
+/*menu*/
+nav.menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav.menu ul li{
+    margin-top: 20px;
+}
+nav.menu ul li a{
+    margin: 0px 5px;
+    padding: 5px 15px;
+    border: 1px solid var(--color-primario);
+    font-family: 'MontserratBold';
+}
+nav.menu ul li a:hover{
+    background: var(--color-primario);
+    color: var(--color-blanco);
+}
+/*estilos cuerpo*/
+.contenedor{
+    margin: 60px 0px;
+    display: flex;
+    flex-direction: row;
+}
+.contenedor .principal{
+    width: 70%;
+    border: 1px solid var(--color-primario);
+    border-radius: 5px;
+    padding: 20px;
+    margin-right: 5px;
+}
+.contenedor aside{
+    width: 30%;
+    margin-left: 5px;
+}
+.contenedor aside .block-aside{
+    border: 1px solid var(--color-primario);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.contenedor .principal h1{
+    font-size: 30px;
+    font-family: 'MontserratBold';
+    text-align: center;
+}
+.contenedor .principal article{
+    margin-top: 20px;
+}
+.contenedor .principal article h2{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.ver_todas{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.boton{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.ver_todas a, .boton a{
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 10px 15px;
+    display: inline-block;
+    border: 1px solid var(--color-primario);
+    cursor: pointer;
+}
+.ver_todas a:hover, .boton a:hover{
+    text-decoration: none;
+    background: var(--color-secundario);
+    color: var(--color-primario);
+}
+article.entrada{
+    transition: all 0.5s;
+}
+article.entrada:hover{
+    transform: scale(1.02);
+}
+aside h3{
+    font-size: 24px;
+    text-align: center;
+}
+aside form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+input[type="submit"]{
+    margin-top: 10px;
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 10px 15px;
+    display: inline-block;
+    border: 1px solid var(--color-primario);
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+input[type="submit"]:hover{
+    background: var(--color-secundario);
+    color: var(--color-primario);
+}
+aside form input[type="email"],
+aside form input[type="password"],
+aside form input[type="text"]{
+    font-size: 18px;
+    border-radius: 5px;
+    border: 0.5px solid var(--color-primario);
+    margin-bottom: 5px;
+}
+aside form label{
+    margin-bottom: 5px;
+}
+/*estilos footer*/
+footer{
+    display: flex;
+    justify-content: center;
+}
+footer p{
+    text-align: center;
+    border-bottom: 1px solid var(--color-primario);
+    display: inline;
+}
+.error{
+    color: var(--color-blanco);
+}
+.logueado{
+    color: var(--color-blanco);
+    display: flex;
+    justify-content: center;
+}
+/*estilos crear categoria*/
+form.crear_categoria input[type="text"]{
+    height: 40px;
+    border-radius: 5px;
+}
+/*estilos crear entrada*/
+form.crear_entrada{
+    display: flex;
+    flex-direction: column;
+}
+form.crear_entrada label.categorias{
+    align-self: flex-start;
+}
+form.crear_entrada label.categorias:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+form.crear_entrada label.categorias input:hover{
+    cursor: pointer;
+}
