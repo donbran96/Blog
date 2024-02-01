@@ -10,13 +10,14 @@
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/efectos.js" defer></script>
 </head>
 <body>
     <div class="contenedor-principal">
         <header class="header">
             <div class="logo">
-                <a href="index.php">
-                    Blog
+                <a href="index">
+                    <h2>Blog</h2>    
                 </a>
             </div>
             <?php  $categorias=getCategorias($conexion); 
@@ -31,7 +32,7 @@
                         foreach ($categorias as $categoria) {
                             ?>
                             <li>
-                                <a href="categorias/<?php echo str_replace(' ','_',strtolower($categoria['nombre'])); ?>"><?php echo $categoria['nombre']; ?></a>
+                                <a href="categorias?id=<?php echo str_replace(' ','_',strtolower($categoria['id'])); ?>"><?php echo $categoria['nombre']; ?></a>
                             </li>
                             <?php
                         }

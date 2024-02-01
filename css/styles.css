@@ -57,7 +57,6 @@ ul{
 }
 .header div.logo{
     margin: 0 auto;
-    font-size: 36px;
     font-family: 'MontserratBold';
 }
 .header div.logo a{
@@ -68,6 +67,9 @@ ul{
     text-decoration: none;
     cursor: pointer;
     text-shadow: 0px 0px 0px var(--color-blanco), -1px -1px 0px var(--color-blanco), -2px -2px 0px var(--color-blanco);
+}
+.header div.logo h2{
+    font-size: 40px;
 }
 /*menu*/
 nav.menu ul{
@@ -113,7 +115,12 @@ nav.menu ul li a:hover{
     border-radius: 5px;
     margin-bottom: 30px;
 }
-.contenedor .principal h1{
+.contenedor .principal h1.titulo{
+    font-size: 30px;
+    font-family: 'MontserratBold';
+    text-align: center;
+}
+h1{
     font-size: 30px;
     font-family: 'MontserratBold';
     text-align: center;
@@ -135,7 +142,7 @@ nav.menu ul li a:hover{
     justify-content: center;
     margin-top: 10px;
 }
-.ver_todas a, .boton a{
+.ver_todas a, .boton a, .ver_todas button{
     background: var(--color-primario);
     color: var(--color-blanco);
     padding: 10px 15px;
@@ -143,7 +150,7 @@ nav.menu ul li a:hover{
     border: 1px solid var(--color-primario);
     cursor: pointer;
 }
-.ver_todas a:hover, .boton a:hover{
+.ver_todas a:hover, .boton a:hover, .ver_todas button:hover{
     text-decoration: none;
     background: var(--color-secundario);
     color: var(--color-primario);
@@ -158,7 +165,9 @@ aside h3{
     font-size: 24px;
     text-align: center;
 }
-aside form{
+aside form,
+form.actualizacion,
+form.update_form{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -180,13 +189,19 @@ input[type="submit"]:hover{
 }
 aside form input[type="email"],
 aside form input[type="password"],
-aside form input[type="text"]{
+aside form input[type="text"],
+form.actualizacion input[type="text"],
+form.actualizacion input[type="email"],
+form.update_form input[type="text"],
+form.update_form textarea{
     font-size: 18px;
     border-radius: 5px;
     border: 0.5px solid var(--color-primario);
     margin-bottom: 5px;
 }
-aside form label{
+aside form label,
+form.actualizacion label,
+form.update_form{
     margin-bottom: 5px;
 }
 /*estilos footer*/
@@ -226,4 +241,29 @@ form.crear_entrada label.categorias:hover{
 }
 form.crear_entrada label.categorias input:hover{
     cursor: pointer;
+}
+/*estilos mi perfil*/
+h3.actualizacion{
+    margin-top: 20px;
+    text-align: center;
+}
+/*estilos entrada single*/
+.titulo_entrada{
+    margin-bottom: 20px;
+}
+article.entrada_single h2{
+    text-align: center;
+}
+
+.edicion #guardar_entrada{
+    margin-right: 5px;
+}
+#guardar_entrada, #cancelar{
+    display: none;
+}
+.edicion #cancelar{
+    margin-left: 5px;
+}
+#entrada_edicion{
+    display: none;
 }
